@@ -1,0 +1,8 @@
+
+resilience4j.ratelimiter:
+  instances:
+    processService:
+      limitForPeriod: 5    #  only handle 5 requests in a second.
+      limitRefreshPeriod: 15s
+      timeoutDuration: 36000  # 10 hours wait for thread
+      registerHealthIndicator: true
