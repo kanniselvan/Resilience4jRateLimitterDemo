@@ -1,8 +1,15 @@
+management.endpoint.health.show-details: always
 
 resilience4j.ratelimiter:
   instances:
     processService:
       limitForPeriod: 5    #  only handle 5 requests in a second.
-      limitRefreshPeriod: 15s
+      limitRefreshPeriod: 15s  # after 15 sec will allow to execute next set of thread
       timeoutDuration: 36000  # 10 hours wait for thread
       registerHealthIndicator: true
+
+ # limitRefreshPeriod: 15s
+ # 2022-11-11T12:11:40.489640 i ==  16
+ # 2022-11-11T12:11:55.483133100 i ==  21
+ # 2022-11-11T12:12:10.494100300 i ==  26
+  # 2022-11-11T12:12:25.486638100 i ==  31

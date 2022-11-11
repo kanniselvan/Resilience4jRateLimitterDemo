@@ -16,11 +16,11 @@ public class WebController {
     @RateLimiter(name="processService", fallbackMethod = "processFallback")
     @GetMapping
     public String  welcomeString(){
-      /*  try {
+        try {
             Thread.sleep(TimeUnit.SECONDS.toSeconds(2));
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }*/
+        }
         return UUID.randomUUID().toString()+"   "+ LocalDateTime.now();
     }
 

@@ -15,7 +15,7 @@ public class RateLimiterTestCase {
 
         for(int i=1;i<100;i++) {
             String output = restTemplate.getForObject("http://localhost:8080/home", String.class);
-            log.info(output);
+            log.info(output +" i ==  "+ i);
         }
 
     }
